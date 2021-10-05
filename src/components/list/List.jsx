@@ -1,14 +1,13 @@
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@material-ui/icons";
-import { useRef, useState } from "react";
 import ListItem from "../listItem/ListItem";
 import "./list.scss";
+import { useRef, useState } from "react";
 
 export default function List() {
   const [isMoved, setIsMoved] = useState(false);
   const [slideNumber, setSlideNumber] = useState(0);
 
   const listRef = useRef();
-
   const handleClick = (direction) => {
     setIsMoved(true);
     let distance = listRef.current.getBoundingClientRect().x - 50;
@@ -29,6 +28,7 @@ export default function List() {
         <div className="container" ref={listRef}>
           <ListItem index={0} />
           <ListItem index={1} />
+          <ListItem index={2} />
           <ListItem index={2} />
           <ListItem index={3} />
           <ListItem index={4} />
